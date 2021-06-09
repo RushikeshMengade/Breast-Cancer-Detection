@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cancer Prediction</title>
+
+      <!--css stylesheet-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="../static/fstyle.css">
+
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+   </head>
+  <body>
+      <div class="bgImage">
+
+        <div class="heading">
+          <h1>BREAST CANCER PREDICTION USING MACHINE LEARNING</h1>
+        </div>
+
+        <div class="page-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+                <form action="\predict" method="post">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Radius</h5>
+                            <input type="number" step="any" id="Mean_Radius" name="Mean_Radius" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Texture</h5>
+                            <input type="number" step="any" id="Mean_Texture" name="Mean_Texture" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Perimeter</h5>
+                            <input type="number" step="any" id="Mean_Perimeter" name="Mean_Perimeter" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Area</h5>
+                            <input type="number" step="any" id="Mean_Area" name="Mean_Area" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Smoothness</h5>
+                            <input type="number" step="any" id="Mean_Smoothness" name="Mean_Smoothness" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Compactness</h5>
+                            <input type="number" step="any"  id="Mean_Compactness" name="Mean_Compactness" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Concavity</h5>
+                            <input type="number" step="any" id="Mean_Concavity" name="Mean_Concavity" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Concave_Points</h5>
+                            <input type="number" step="any" id="Mean_Concave_Points" name="Mean_Concave_Points" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Symmetry</h5>
+                            <input type="number" step="any" id="Mean_Symmetry" name="Mean_Symmetry" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mean_Fractal_Dimension</h5>
+                            <input type="number" step="any" id="Mean_Fractal_Dimension" name="Mean_Fractal_Dimension"placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Radius_Error</h5>
+                            <input type="number" step="any" id="Radius_Error" name="Radius_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Texture_Error</h5>
+                            <input type="number" step="any" id="Texture_Error" name="Texture_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Perimeter_Error</h5>
+                            <input type="number" step="any" id="Perimeter_Error" name="Perimeter_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Area_Error</h5>
+                            <input type="number" step="any" id="Area_Error" name="Area_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Smoothness_Error</h5>
+                            <input type="number" step="any" id="Smoothness_Error" name="Smoothness_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Compactness_Error</h5>
+                            <input type="number" step="any" id="Compactness_Error" name="Compactness_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Concavity_Error</h5>
+                            <input type="number" step="any" id="Concavity_Error" name="Concavity_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Concave_Points_Error</h5>
+                            <input type="number" step="any" id="Concave_Points_Error" name="Concave_Points_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Symmetry_Error</h5>
+                            <input type="number" step="any" id="Symmetry_Error" name="Symmetry_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Fractal_Dimension_Error</h5>
+                            <input type="number" step="any" id="Fractal_Dimension_Error" name="Fractal_Dimension_Error" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Radius</h5>
+                            <input type="number" step="any" id="Worst_Radius" name="Worst_Radius" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Texture</h5>
+                            <input type="number" step="any" id="Worst_Texture" name="Worst_Texture" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Perimeter</h5>
+                            <input type="number" step="any" id="Worst_Perimeter" name="Worst_Perimeter" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Area</h5>
+                            <input type="number" step="any" id="Worst_Area" name="Worst_Area" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Smoothness</h5>
+                            <input type="number" step="any" id="Worst_Smoothness" name="Worst_Smoothness" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Compactness</h5>
+                            <input type="number" step="any" id="Worst_Compactness" name="Worst_Compactness" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Concavity</h5>
+                            <input type="number" step="any" id="Worst_Concavity" name="Worst_Concavity" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Concave_Points</h5>
+                            <input type="number" step="any" id="Worst_Concave_Points" name="Worst_Concave_Points" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Symmetry</h5>
+                            <input type="number" step="any" id="Worst_Symmetry" name="Worst_Symmetry" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-4 sec">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Worst_Fractal_Dimension</h5>
+                            <input type="number" step="any" id="Worst_Fractal_Dimension" name="Worst_Fractal_Dimension" placeholder="ENTER NUMBER">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div class="container">
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                  
+                </form>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3 align="center">{{prediction_text}}</h3>
+      <br>
+
+
+  </body>
+</html>

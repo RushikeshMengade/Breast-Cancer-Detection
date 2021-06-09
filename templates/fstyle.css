@@ -1,0 +1,29 @@
+.bgImage{
+  background-image: url("image/med1.jpg");
+}
+
+.heading{
+  text-align: center;
+  padding: 55px;
+  color: black;
+  font-size: 30px;
+}
+
+.sec{
+  padding-bottom: 20px;
+}
+
+.center{
+  text-align: center;
+}
+
+.sideImg{
+  right: 75px;
+  padding-top: 25px;
+  box-shadow: 50px;
+  border-radius: 20px;
+}
+
+.Img{
+  padding-bottom: 70px;
+}
